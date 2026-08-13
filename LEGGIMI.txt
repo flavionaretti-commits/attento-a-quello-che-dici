@@ -1,0 +1,34 @@
+ATTENTO A QUELLO CHE DICI! — PWA per GitHub Pages
+
+FILE DA CARICARE SU GITHUB
+- index.html
+- manifest.webmanifest
+- service-worker.js
+- cartella icons (con tutti i file al suo interno)
+
+IMPORTANTE
+Carica i file mantenendo esattamente questa struttura. Non mettere index.html dentro una sottocartella.
+
+GITHUB PAGES
+1. Apri il repository.
+2. Settings → Pages.
+3. In "Build and deployment" scegli "Deploy from a branch".
+4. Branch: main, cartella: /(root).
+5. Salva e attendi la pubblicazione.
+6. Apri l'indirizzo GitHub Pages almeno una volta con Internet.
+7. Poi puoi installare l'app sulla schermata Home.
+
+iPHONE / iPAD
+Apri il sito in Safari → Condividi → Aggiungi alla schermata Home.
+
+ANDROID
+Apri il sito in Chrome → menu → Installa app / Aggiungi a schermata Home.
+
+CARTE PERSONALIZZATE
+Le modifiche restano nel browser/app sul dispositivo tramite memoria locale.
+ESPORTA MAZZO crea un file JSON di backup: su smartphone prova prima il pannello Condividi/Salva file; se non disponibile usa il download normale.
+IMPORTA MAZZO permette di recuperare quel file JSON.
+Conviene esportare periodicamente un backup, perché disinstallare l'app o cancellare i dati del browser può eliminare le personalizzazioni.
+
+OFFLINE
+Dopo il primo caricamento online, il service worker conserva i file essenziali e il gioco può aprirsi anche senza connessione.
