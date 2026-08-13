@@ -337,10 +337,14 @@ input,select{color:var(--ink);background:var(--panel);border-color:var(--panel-b
 }
 
 
-/* Correzione esclusiva per smartphone touch in orizzontale.
-   Non modifica smartphone verticale, tablet o PC. */
-@media (orientation:landscape) and (max-height:600px) and (max-width:1000px) and (pointer:coarse){
+
+
+/* Correzione robusta per smartphone e tablet TOUCH in orizzontale.
+   Non si applica in verticale e non modifica PC/laptop con mouse. */
+@media (orientation:landscape) and (max-width:1400px) and (hover:none){
   #game{
+    display:grid;
+    grid-template-rows:auto auto minmax(0,1fr);
     height:100dvh;
     min-height:100dvh;
     overflow:hidden;
@@ -349,55 +353,59 @@ input,select{color:var(--ink);background:var(--panel);border-color:var(--panel-b
 
   #game .topbar{
     display:grid;
-    grid-template-columns:1fr auto 1fr;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
     align-items:center;
     gap:6px;
-    margin-bottom:2px;
+    margin:0 0 3px;
   }
 
   #game .turnBox{
-    font-size:clamp(16px,2.7vw,22px);
+    font-size:clamp(15px,4.3vh,25px);
     line-height:1;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
   }
 
   #game .timer{
-    font-size:clamp(30px,5vw,44px);
-    min-width:62px;
-    line-height:1;
+    font-size:clamp(30px,9vh,50px);
+    line-height:.95;
+    min-width:58px;
   }
 
   #game .smallControls{
     grid-column:auto;
     justify-content:flex-end;
-    gap:6px;
+    gap:5px;
   }
 
   #game .smallBtn{
-    padding:6px 10px;
-    font-size:13px;
+    padding:5px 9px;
+    font-size:clamp(11px,3.2vh,15px);
     border-radius:10px;
   }
 
   #game .scoreStrip{
+    min-height:0;
     padding:2px 0 4px;
     gap:5px;
-    min-height:0;
+    overflow-x:auto;
   }
 
   #game .scoreChip{
     padding:4px 8px;
-    font-size:12px;
+    font-size:clamp(10px,2.8vh,14px);
   }
 
   #game .playArea{
-    flex:1;
     min-height:0;
+    height:100%;
     display:grid;
-    grid-template-columns:minmax(108px,20vw) minmax(300px,48vw) minmax(108px,20vw);
+    grid-template-columns:minmax(100px,19vw) minmax(300px,52vw) minmax(100px,19vw);
     grid-template-areas:"left card right";
     gap:8px;
-    align-items:center;
-    align-content:center;
+    align-items:stretch;
+    align-content:stretch;
     justify-content:center;
   }
 
@@ -405,61 +413,70 @@ input,select{color:var(--ink);background:var(--panel);border-color:var(--panel-b
     grid-area:card;
     min-height:0;
     height:100%;
-    align-items:center;
+    align-items:stretch;
   }
 
   #game .side.left{grid-area:left}
   #game .side.right{grid-area:right}
 
   #game .side{
+    min-height:0;
+    height:100%;
     gap:7px;
     justify-content:center;
   }
 
-  #game .card{
-    width:100%;
-    height:calc(100dvh - 92px);
-    max-height:none;
-    min-height:0;
-    aspect-ratio:auto;
-    padding:10px 14px;
-    border-width:3px;
-    border-radius:22px;
-  }
-
-  #game .target{
-    font-size:clamp(27px,4.8vw,40px);
-    line-height:1;
-  }
-
-  #game .rule{
-    margin:7px 0;
-    height:2px;
-  }
-
-  #game .forbidden{
-    font-size:clamp(16px,2.65vw,22px);
-    gap:4px;
-    line-height:1.02;
-  }
-
-  #game .tapHint{
-    margin-top:7px;
-    font-size:9px;
-    line-height:1.05;
-  }
-
   #game .action{
-    min-height:58px;
-    padding:6px 5px;
+    flex:1 1 0;
+    min-height:0;
+    max-height:none;
+    padding:5px 4px;
     border-radius:14px;
-    font-size:clamp(13px,2.45vw,18px);
-    line-height:1.05;
+    font-size:clamp(12px,4.2vh,20px);
+    line-height:1.03;
     box-shadow:0 4px 0 rgba(0,0,0,.16);
   }
 
   #game .action small{
-    font-size:.68em;
+    font-size:.66em;
+  }
+
+  #game .card{
+    width:100%;
+    height:100%;
+    min-height:0;
+    max-height:none;
+    aspect-ratio:auto;
+    padding:8px 14px;
+    border-width:3px;
+    border-radius:22px;
+    overflow:hidden;
+  }
+
+  #game .target{
+    font-size:clamp(25px,7vh,44px);
+    line-height:1;
+    flex:0 0 auto;
+  }
+
+  #game .rule{
+    height:2px;
+    margin:6px 0;
+    flex:0 0 auto;
+  }
+
+  #game .forbidden{
+    font-size:clamp(15px,4.6vh,27px);
+    gap:3px;
+    line-height:1;
+    flex:0 1 auto;
+  }
+
+  #game .tapHint{
+    margin-top:5px;
+    font-size:clamp(8px,2.2vh,11px);
+    line-height:1;
+    flex:0 0 auto;
   }
 }
 
