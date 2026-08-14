@@ -97,6 +97,26 @@ select,input{padding:12px 14px;border:1px solid #b9ad9b;border-radius:12px;backg
 .winner{font-size:clamp(28px,5vw,44px);text-align:center;font-weight:1000}
 .themeSwitch{display:flex;justify-content:center;gap:8px;margin:18px 0 8px}
 .infoBox{position:relative;max-width:720px!important;text-align:left!important;padding-top:58px!important}
+.licenseInfo{
+  margin-top:22px;
+  padding:16px 17px;
+  border:1.5px solid var(--panel-border);
+  border-radius:18px;
+  background:var(--secondary);
+  font-size:15px;
+  line-height:1.5;
+  text-align:left;
+}
+.licenseInfo p{margin:9px 0}
+.licenseInfo p:first-child{margin-top:0}
+.licenseInfo p:last-child{margin-bottom:0}
+.licenseInfo a{
+  color:var(--accent);
+  font-weight:900;
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+body.night .licenseInfo a{color:var(--accent2)}
 .infoClose{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1px solid var(--panel-border);background:var(--secondary);color:var(--ink);font-size:24px;font-weight:900;line-height:1;display:flex;align-items:center;justify-content:center}
 .themeBtn{border:1px solid var(--panel-border);background:var(--secondary);color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:900}
 .themeBtn.active{background:var(--button);color:var(--buttonText)}
@@ -641,6 +661,20 @@ input,select{color:var(--ink);background:var(--panel);border-color:var(--panel-b
    <p>Parlare in modo confuso spesso significa anche pensare in modo confuso. Imparare nuove parole, usarle correttamente e scegliere ogni volta quella più adatta rende il nostro pensiero più preciso e la comunicazione più efficace.</p>
    <p style="font-weight:900;text-align:center;margin-bottom:0">ATTENTO A QUELLO CHE DICI… PERCHÉ LE PAROLE CONTANO!</p>
   </div>
+
+  <div class="licenseInfo">
+   <p><strong>© 2026 Flavio Naretti</strong></p>
+   <p>
+    Codice sorgente distribuito con licenza
+    <a href="./LICENSE" target="_blank" rel="noopener">GNU GPL v3.0</a>.
+   </p>
+   <p>
+    Testi, regolamento, carte, grafica e altri contenuti originali sono distribuiti con licenza
+    <a href="./LICENSE-CONTENUTI.md" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>.
+   </p>
+   <p>Eventuali risorse di terzi restano soggette alle rispettive licenze.</p>
+  </div>
+
   <div class="buttonRow" style="margin-top:24px">
    <button type="button" class="primary" onclick="playSound('menu'); closeInfo()">CHIUDI</button>
   </div>
