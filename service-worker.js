@@ -1,4 +1,5 @@
 const CACHE_NAME='attento-pwa-v5';
+const CACHE_PREFIX='attento-pwa-';
 const APP_SHELL=[
   './',
   './index.html',
@@ -20,7 +21,7 @@ self.addEventListener('install',event=>{
 self.addEventListener('activate',event=>{
   event.waitUntil(
     caches.keys().then(keys=>Promise.all(
-      keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k))
+      keys.filter(k=>k.startsWith(CACHE_PREFIX)&&k!==CACHE_NAME).map(k=>caches.delete(k))
     ))
   );
   self.clients.claim();

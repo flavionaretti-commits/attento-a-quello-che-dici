@@ -2,6 +2,7 @@
   "name": "ATTENTO A QUELLO CHE DICI!",
   "short_name": "ATTENTO!",
   "description": "Il gioco delle parole proibite, ideato da Flavio Naretti.",
+  "id": "/attento-a-quello-che-dici/",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
